@@ -1,0 +1,57 @@
+[
+{
+	"id":"0",
+	"Question":"Есть такой CSS-код: body {font-size: 14pt;} p {font-size: 2em;}. Какой размер текста будет в теге <p>:",
+	"Answers": [
+		{"Correct_answer":"28pt",
+		"Answer0":"14pt",
+		"Answer1":"20pt",
+		"Answer2":"16pt",
+		"Answer3":"28pt"}
+	]
+},
+{
+	"id":"1",
+	"Question":"Какое свойство используется для задания отступов у блока?",
+	"Answers": [
+		{"Correct_answer":"padding",
+		"Answer0":"margin",
+		"Answer1":"direction",
+		"Answer2":"layout",
+		"Answer3":"padding"}
+	]
+},
+{
+	"id":"2",
+	"Question":"Есть такой код: ul li:first-letter {font-size: 200%;}. Что он делает?",
+	"Answers": [
+		{"Correct_answer":"Делает первую букву у каждого элемента ненумерованного списка размером 200%.",
+		"Answer0":"Делает первую букву у первого элемента в нумерованном списке размером 200%.",
+		"Answer1":"Ничего не делает, так как псевдоэлемента first-letter вообще не существует.",
+		"Answer2":"Делает первую букву у каждого элемента ненумерованного списка размером 200%.",
+		"Answer3":"Делает первую букву у первого элемента в ненумерованном списке размером 200%."}
+	]
+},
+{
+	"id":"3",
+	"Question":"Виктору надо, чтобы при наведении курсора мыши на ссылку, она меняла цвет. Какой псевдоэлемент нужно использовать Виктору?",
+	"Answers": [
+		{"Correct_answer":":hover",
+		"Answer0":"::before",
+		"Answer1":"::after",
+		"Answer2":":last-child",
+		"Answer3":":hover"}
+	]
+},
+{
+	"id":"4",
+	"Question":"Какой селектор написан с ошибкой?",
+	"Answers": [
+		{"Correct_answer":"input['text']",
+		"Answer0":"input[type='text']",
+		"Answer1":"input",
+		"Answer2":"input.text",
+		"Answer3":"input['text']"}
+	]
+}
+]
