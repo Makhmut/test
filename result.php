@@ -10,8 +10,8 @@ else {
 }
 
 if(isset($_POST['result'])) {
-	
-	if(($_POST['q0'] || $_POST['q1'] || $_POST['q2'] || $_POST['q3'] || $_POST['q4']) == '') {
+	$answers_not_empty = array_filter($_POST['Answer'], function($item) {return !empty($item);});
+	if(count($answers_not_empty) < count(read_json('tests/'.$testfile.'.json'))) {
         header('refresh:3;url=list.php');
         echo '<p>Все вопросы требуют ответа! Перенаправление на список тестов.</p>';
         die();
@@ -34,7 +34,7 @@ if(isset($_POST['result'])) {
 		// Список ответов из .json файла
 		$answers = $test[$i]['Answers'];
 		// Ответы пользователя
-		$question = $_POST['q'.$i];
+		$user_answers = $_POST['Answer'][$i];
 		
 		// Цикл для проверки правильности ответов
 		foreach($answers as $item) {
@@ -44,7 +44,7 @@ if(isset($_POST['result'])) {
 			array_push($correct_answers, $correct_answer);
 			
 			// Если ответ верный увеличиваем на единицу $correct, иначе увеличиваем $wrong
-			if($question == $item['Correct_answer']) {
+			if($user_answers == $item['Correct_answer']) {
 				$correct++;
 			}
 			else {
@@ -120,7 +120,7 @@ else {
 		<?php for($i = 0; $i < count($test); $i++) : ?>
 			<div class="razbor">
 				<p class="question"><b><?=($i+1).'. '.htmlspecialchars($test[$i]['Question']);?></b></p>
-				<p class="<?php if($_POST['q'.$i] == $correct_answers[$i]) echo 'correct'; else echo 'wrong';?>">Вы ответили: <b><?=htmlspecialchars($_POST['q'.$i]);?></b></p>
+				<p class="<?php if($_POST['q'.$i] == $correct_answers[$i]) echo 'correct'; else echo 'wrong';?>">Вы ответили: <b><?=htmlspecialchars($_POST['Answer'][$i]);?></b></p>
 				<p class="correct">Правильный вариант: <b><?=htmlspecialchars($correct_answers[$i]);?></b></p>
 			</div>
 		<?php endfor; ?>

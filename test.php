@@ -63,7 +63,7 @@ else {
 			<?php for($k = 0; $k < count($answers, COUNT_RECURSIVE) - 2; $k++) : ?>
 				<?php foreach($answers as $item) : ?>
 					<label>
-						<input name="<?='q'.$test[$i]['id'];?>" type="radio" value="<?=$item['Answer'.$k];?>">
+						<input name="Answer[<?=$i?>]" type="radio" value="<?=$item['Answer'.$k];?>">
 						<?=htmlspecialchars($item['Answer'.$k]);?><br />
 					</label>
 				<?php endforeach; ?>

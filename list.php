@@ -27,7 +27,7 @@ else {
 	echo '<h3 align="center">Список доступных тестов на данный момент</h3>';
 	$testFiles = scandir('tests');
 	
-	if($_SERVER['HTTP_REFERER'] == 'http://university.netology.ru/u/abaiuly/lesson-2.2/admin.php') {
+	if(strpos($_SERVER['HTTP_REFERER'], 'admin.php')) {
 		$testFiles = uploadFile('testfile', substr($_FILES['testfile']['name'],0, -5));
 
 		if(!$testFiles) {
